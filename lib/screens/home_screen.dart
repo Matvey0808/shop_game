@@ -2,8 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:shop_game/data/countries_data.dart';
 import 'package:shop_game/widgets/card_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  // void navigationCard() {
+  //   setState(() {
+  //     Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //         builder: (context) => , // Сюда написать экран
+  //       )
+  //     );
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +41,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) {
                   final country = countries[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: CardWidget(country: country),
-                  );
+                  return CardWidget(country: country);
                 },
               ),
             ),

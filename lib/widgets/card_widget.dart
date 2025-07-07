@@ -22,19 +22,21 @@ class CardWidget extends StatelessWidget {
           ),
           elevation: 2,
           shadowColor: Colors.black,
-          color: Colors.blue,
+          color: Colors.grey[800],
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  country.svgImage,
-                  width: 40,
-                  height: 60,
-                  fit: BoxFit.contain,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    country.svgImage,
+                    width: 150,
+                    height: 150,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                SizedBox(height: 10),
                 Text(country.name),
                 Text(country.title),
               ],
